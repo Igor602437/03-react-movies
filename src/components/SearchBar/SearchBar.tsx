@@ -8,7 +8,7 @@ interface OrderFormProps {
 export default function OrderForm({onSubmit}: OrderFormProps) {
   const handleSubmit = (formData: FormData) => {
     const query = formData.get('query') as string;
-    if (query === '') {
+    if (!query.trim()) {
       toast.error("Please enter your search query.");
       return;
     }
