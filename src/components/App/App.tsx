@@ -1,11 +1,11 @@
 import css from './App.module.css'
-import SearchForm from '../SearchBar/SearchBar'
+import SearchBar from '../SearchBar/SearchBar';
 import type { Movie } from '../../types/movie';
 import { useState } from 'react';
 import { fetchMovies } from '../../services/movieService';
 import MovieGrid from '../MovieGrid/MovieGrid';
 import MovieModal from '../MovieModal/MovieModal';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import Loader from '../Loader/Loader';
 import ErrorMessage from '../ErrorMessage/ErrorMessage';
 
@@ -47,8 +47,7 @@ export default function App() {
 
   return (    
     <div className={css.app}>
-      <Toaster position="top-center" />
-      <SearchForm onSubmit={handleSubmit} />
+      <SearchBar onSubmit={handleSubmit} />
       {loading && <Loader/>}
       {error ? <ErrorMessage/> :(movies.length > 0 && <MovieGrid movies={movies} onSelect={handleSelectMovie} />)}
       {isModalOpen && selectedMovie && (<MovieModal movie={selectedMovie} onClose={closeModal} />)}
