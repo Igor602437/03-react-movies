@@ -1,5 +1,3 @@
-.title {
-  box-sizing: border-box;
-  font-size: 24px;
-  margin: 0 auto;
+.app {
+  padding: 0 16px;
 }
