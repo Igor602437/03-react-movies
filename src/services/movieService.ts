@@ -10,7 +10,7 @@ interface TmdbResponce {
 }
 export const fetchMovies = async (
   query: string,
-  limit: number = 15
+  limit: number = 20
 ): Promise<Movie[]> => {
   const { data } = await axios.get<TmdbResponce>(
     `/search/movie?query=${query}`
